@@ -1,14 +1,17 @@
-const { sql, sqlConn, sqlFormatoRespuesta } = require('../config/conexion_db')
+const { sql, sqlConn, sqlFormatoRespuesta } = require('../config/conexion')
 
 const registrarDB = {
 
     //Recibe la cantidad de carnets para calcular el precio de este
     recibirDatosEvento: async(datos) => {
         try{
-
+            let resultado = await sqlConn.request()
+                .input('CANTIDAD', sql.Float, datos.numCarnet || 1)
+                .execute('PRECIO_EVENTO')
+            return sqlFormatoRespuesta(resultado);
         }
         catch(error){
-
+            throw error
         }
     },
 
@@ -21,7 +24,8 @@ const registrarDB = {
             
         }
     },
-    
+
+    //Despliega el resumen final del pago 
     // obtenerResumen: async() => {
     //     try{
 
