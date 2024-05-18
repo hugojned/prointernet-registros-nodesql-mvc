@@ -18,7 +18,7 @@ const registrarDB = {
     //Manda los datos del cliente y los carnets
     nuevoRegistroCarnets: async(datos) => {
         try{
-
+            
         }
         catch(error){
             

@@ -42,10 +42,11 @@ const registroCtrl = {
             res.redirect('/404')
             return
         }
-
         res.render('registro/registro', {
             datosEvento,
         })
     }
 
 }
+
+module.exports = registroCtrl

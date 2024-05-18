@@ -1,0 +1,29 @@
+/* Login Register */
+
+.espacio-login{
+    margin-top: 60px;
+}
+
+.contenedor{
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h3{
+    text-align: center;
+}
+
+h4{
+    text-align: center;
+}
+
+/* Carnets */
+
+.espacio{
+    margin-top: 25px;
+}
+
+.contenedor2{
+    max-width: 200px;
+    margin: 0 auto;
+}
