@@ -5,11 +5,10 @@ const registroCtrl = {
     selectCarnetCtrl: async (req, res) => {
         try{
             const body = req.body
-            body.numCarnet = Number(body.numCarnet)
+            body.numCarnet = Number(body.numCarnetValor)
             const datosEvento = (await dbReg.recibirDatosEvento(body)).data[0]
             const numCarnet = body.numCarnet
             const carnet = []
-            console.log(body)
 
             for(let i = 0; i < numCarnet; i++){
                 carnet.push({numCarnet: i + 1})
@@ -22,18 +21,20 @@ const registroCtrl = {
                 if(err){
                     return res.json({status: 'ERROR'})
                 }
+                console.log(htmlCarnets)
 
                 //Backend-tabla-precios
                 res.render('registroCarnets/tabla_precios', {datosEvento}, (err, htmlMontosTotales) => {
                     if(err){
                         return res.json({status: 'ERROR'})
                     }
-    
+                    console.log(htmlMontosTotales)
                     res.json({status: 'OK', datos: {htmlCarnets, htmlMontosTotales}})
                 })
             })
         }catch(err){
             res.json({status: 'ERROR'})
+            console.log('ERROR')
         }
     },
 

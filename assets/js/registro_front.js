@@ -3,7 +3,8 @@ let btnRegistrar = document.getElementById('btnRegistrar')
 
 //Evento para el despliegue del número de carnets
 listNumCarnets.addEventListener('change', function (event) {
-    let numCarnet = event.target.value
+    let numCarnetValor = parseInt(event.target.value)
+    console.log(numCarnetValor)
     let contenedorCarnetsDinamicos = document.getElementById('contenedorCarnetsDinamicos')
     let contenedorPrecios = document.getElementById('contenedorPrecios')
 
@@ -12,7 +13,7 @@ listNumCarnets.addEventListener('change', function (event) {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({ numCarnet })
+        body: JSON.stringify({ numCarnetValor })
     })
     .then((response) => response.json())
     .then((response) => {
