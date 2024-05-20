@@ -14,7 +14,7 @@
     <div class="contenedor">
 
         <div class="contenedor-titulo-evento">
-            <h1>Registro para el evento: {nombre}</h1>
+            <h1>Registro para el evento: {{datosEvento.NOMBRE_EVE}}</h1>
         </div>
 
         <div class="contenedor-cliente-precio">
@@ -100,7 +100,7 @@
                         </div>
 
                         <div class="btn-container">
-                            <button class="btn" id="btnRegistrar" data-id="{{}}">Registrar</button>
+                            <button class="btn" id="btnRegistrar" data-id="{{datosEvento.ID_EVENTO}}">Registrar</button>
                         </div>
                     </div>
 
@@ -108,16 +108,14 @@
 
             </div>
 
-            <div class="contenedor-precios">
-                {{}}
-
-                
+            <div class="contenedorPrecios">
+                {{>registroCarnets/tabla_precios}}
             </div>
             
         </div>
 
-        <div class="contenedor-carnets-dinamicos">
-            {{}}
+        <div class="contenedorCarnetsDinamicos">
+            {{>registroCarnets/backend_carnets}}
         </div>
 
     </div>

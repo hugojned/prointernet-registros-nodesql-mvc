@@ -1,6 +1,6 @@
 <div class="card-carnet">
-    <form id="form-carnet">
-        <h3 class="carnet-text">Carnet Nº <span>{num}</span> | <span>${precio}</span> </h3>
+    <form id="form-carnet{{numCarnet}}">
+        <h3 class="carnet-text">Carnet Nº <span>{{#if numCarnet}}{{numCarnet}}{{else}}1{{/if}}</span> | <span>${{datosEvento.PRECIO}}</span> </h3>
 
         <div class="inputs-container">
             <div class="input-box-carnets">

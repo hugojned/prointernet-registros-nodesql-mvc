@@ -1,0 +1,7 @@
+{{#if carnet}}
+    {{#each carnet}}
+    {{>registroCarnets/carnets datosEvento=../datosEvento}}
+    {{/each}}
+{{else}}
+    {{>registroCarnets/carnets}}
+{{/if}}
