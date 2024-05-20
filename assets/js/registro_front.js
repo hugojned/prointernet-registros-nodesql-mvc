@@ -1,12 +1,13 @@
 let listarCarnets = document.getElementById('listarCarnets')
 let btnRegistrar = document.getElementById('btnRegistrar')
 
+//Evento para el despliegue del número de carnets
 listarCarnets.addEventListener('change', (event) => {
-    var numCarnet = event.target.value
-    var contenedorCarnets = document.getElementById('contenedorCarnets')
-    var contenedorPrecios = document.getElementById('contenedor-precios')
+    let numCarnet = event.target.value
+    let contenedorCarnets = document.getElementById('contenedor-carnets-dinamicos')
+    let contenedorPrecios = document.getElementById('contenedor-precios')
 
-    fetch('/rt_registro_select_carnet', {
+    fetch('/selectCarnetCtrl', {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
@@ -17,11 +18,14 @@ listarCarnets.addEventListener('change', (event) => {
         .then((response) => {
             var datos = response.datos
             contenedorCarnets.innerHTML = datos.htmlCarnets
-            contenedorMontosTotales.innerHTML = datos.htmlMontosTotales
+            contenedorPrecios.innerHTML = datos.htmlMontosTotales
         })
         .catch(function (err) {
             console.log(err)
         })
 })
+
+
+//Evento para el registro
 
 

@@ -6,7 +6,7 @@ const sqlCredentials = {
         password: process.env.PASSDB,
         server: process.env.SERVER,
         database: process.env.DATABASE,
-        port: process.env.PORTDB,
+        port: parseInt(process.env.PORTDB), //pasar a entero o da error
         encrypt: true,
         options: {
             trustedConnection: true,

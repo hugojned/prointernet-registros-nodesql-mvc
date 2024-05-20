@@ -22,6 +22,9 @@ const connectSQL = () => {
 					connectSQL();
 				}, 2500)
 			}
+			else{
+				return null
+			}
 		})
 }
 

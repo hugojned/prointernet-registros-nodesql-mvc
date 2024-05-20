@@ -1,29 +1,207 @@
-/* Login Register */
-
-.espacio-login{
-    margin-top: 60px;
+/* Globales */
+body {
+  font-family: Helvetica;
+  background: rgb(8, 9, 34);
 }
 
-.contenedor{
-    max-width: 600px;
-    margin: 0 auto;
+h4 {
+  font-size: 25px;
+  text-align: center;
+  margin: 15px 0 30px 0;
 }
 
-h3{
-    text-align: center;
+/* Página principal */
+
+.contenedor {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-h4{
-    text-align: center;
+.required-asterisk {
+  color: red;
+}
+
+.contenedor-titulo-evento {
+  max-width: 1000px;
+  height: 80px;
+  background: linear-gradient(90deg, rgba(112, 0, 49, 1) 0%, rgba(40, 0, 27, 1) 100%);
+  backdrop-filter: blur(9px);
+  color: #fff;
+  border-radius: 12px;
+  padding: 30px 40px;
+  margin: 50px 0;
+}
+
+.contenedor-cliente-precio {
+  display: grid;
+  grid-template-columns: 65% 35%;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 50px;
+}
+
+.contenedor-carnets-dinamicos {
+  margin: 25px 0;
+}
+
+.contenedor-reseumen {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  margin: 150px;
+}
+
+
+/*Form Cliente */
+.card-cliente {
+  width: 470px;
+  background: linear-gradient(90deg, rgba(112, 0, 49, 1) 0%, rgba(40, 0, 27, 1) 100%);
+  backdrop-filter: blur(9px);
+  color: #fff;
+  border-radius: 12px;
+  padding: 30px 40px;
+}
+
+.cliente-text {
+  font-size: 28px;
+  text-align: center;
+  margin: 25px 0;
+}
+
+.inputs-container {
+  display: grid;
+  justify-content: center;
+}
+
+
+.input-box input {
+  width: 400px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  font-size: 16px;
+  color: #fff;
+  padding: 10px 30px 10px 15px;
+  margin: 5px 0;
+}
+
+.input-box input::placeholder {
+  color: #fff;
+}
+
+.cbo-container select {
+  width: 400px;
+  height: 35px;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  font-size: 16px;
+  color: #000000;
+  margin: 5px 0;
+}
+
+.btn-container,
+.cbo-container {
+  display: grid;
+  justify-content: center;
+}
+
+.card-cliente .btn {
+  width: 150px;
+  height: 45px;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
 }
 
 /* Carnets */
 
-.espacio{
-    margin-top: 25px;
+.card-carnet {
+  width: 350px;
+  background: linear-gradient(90deg, rgba(112, 0, 49, 1) 0%, rgba(40, 0, 27, 1) 100%);
+  backdrop-filter: blur(9px);
+  color: #fff;
+  border-radius: 12px;
+  padding: 30px 40px;
 }
 
-.contenedor2{
-    max-width: 200px;
-    margin: 0 auto;
+.carnet-text {
+  font-size: 24px;
+  text-align: center;
+  margin: 25px 0;
+}
+
+.input-box-carnets input {
+  width: 300px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  font-size: 16px;
+  color: #fff;
+  padding: 10px 30px 10px 15px;
+  margin: 5px 0;
+}
+
+.input-box-carnets input::placeholder {
+  color: #fff;
+}
+
+
+/* Tabla precios */
+.precio-title-text {
+  font-size: 25px;
+  text-align: center;
+  margin: 15px 0 30px 0;
+}
+
+.card-precios {
+  max-width: 300px;
+  background: linear-gradient(90deg, rgba(112, 0, 49, 1) 0%, rgba(40, 0, 27, 1) 100%);
+  backdrop-filter: blur(9px);
+  color: #fff;
+  border-radius: 12px;
+  padding: 30px 40px;
+}
+
+.card-precios p {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+
+/* Resumen */
+.card-resumen {
+  max-width: 600px;
+  background: linear-gradient(90deg, rgba(112, 0, 49, 1) 0%, rgba(40, 0, 27, 1) 100%);
+  backdrop-filter: blur(9px);
+  color: #fff;
+  border-radius: 12px;
+  padding: 30px 40px;
+}
+
+.card-resumen p {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.resumen-title-text {
+  font-size: 35px;
+  text-align: center;
+  margin: 15px 0 30px 0;
 }

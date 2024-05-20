@@ -8,7 +8,7 @@ const registrarDB = {
             let resultado = await sqlConn.request()
                 .input('CANTIDAD', sql.Float, datos.numCarnet || 1)
                 .execute('PRECIO_EVENTO')
-            return sqlFormatoRespuesta(resultado);
+            return sqlFormatoRespuesta(resultado)
         }
         catch(error){
             throw error
