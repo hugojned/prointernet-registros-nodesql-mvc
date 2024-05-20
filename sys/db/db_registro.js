@@ -18,10 +18,21 @@ const registrarDB = {
     //Manda los datos del cliente y los carnets
     nuevoRegistroCarnets: async(datos) => {
         try{
-            
+            let resultado = await sqlConn.request()
+                .input('ID_EVENTO', sql.VarChar, datos.idEvento)
+                .input('NOMBRE_CLIENTE', sql.VarChar, datos.registro.txtNombreCliente)
+                .input('APELLIDO_CLIENTE', sql.VarChar, datos.registro.txtApellidosCliente)
+                .input('CORREO_CLIENTE', sql.VarChar, datos.registro.txtCorreoCliente)
+                .input('TELEFONO_CLIENTE', sql.VarChar, datos.registro.txtTelefonoCliente)
+                .input('CELULAR_CLIENTE', sql.VarChar, datos.registro.txtCelularCliente)
+                .input('COMENTARIOS_CLIENTE', sql.VarChar, datos.registro.txtComentariosCliente)
+                .input('NUM_CARNETS', sql.VarChar, datos.registro.listNumCarnets)
+                .input('CARNETS', sql.NVarChar, JSON.stringify(datos.carnetsArray))
+                .execute('REGISTRO_CARNETS')
+            return sqlFormatoRespuesta(resultado)
         }
         catch(error){
-            
+            throw error
         }
     },
 

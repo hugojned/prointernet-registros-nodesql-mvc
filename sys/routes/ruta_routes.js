@@ -6,7 +6,7 @@ const registroCtrl = require('../controllers/control_registro')
 router.post('/rtSelectCarnet', registroCtrl.selectCarnetCtrl)
 
 //Registro del carnet
-
+router.post('/rtEnviarRegistro', registroCtrl.registroEnviarRegistroCtrl)
 
 
 //Vista del resumen GET

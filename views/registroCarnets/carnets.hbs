@@ -1,19 +1,19 @@
 <div class="card-carnet">
-    <form id="form-carnet{{numCarnet}}">
+    <form id="form-carnet{{numCarnet}}" class="formsCarnets">
         <h3 class="carnet-text">Carnet Nº <span>{{#if numCarnet}}{{numCarnet}}{{else}}1{{/if}}</span> | <span>${{datosEvento.PRECIO}}</span> </h3>
 
         <div class="inputs-container">
             <div class="input-box-carnets">
-                <input required="" placeholder="Nombres *" type="text" name="txtNombreCarnet" />
+                <input required="" placeholder="Nombres *" type="text" name="txtNombreCarnet"/>
             </div>
             <div class="input-box-carnets">
-                <input required="" placeholder="Apellidos *" type="text" />
+                <input required="" placeholder="Apellidos *" type="text" name="txtApellidoCarnet"/>
             </div>
             <div class="input-box-carnets">
-                <input required="" placeholder="Correo *" type="email" />
+                <input required="" placeholder="Correo *" type="email" name="txtCorreoCarnet"/>
             </div>
             <div class="input-box-carnets">
-                <input required="" placeholder="Celular *" type="tel" max="10" />
+                <input required="" placeholder="Celular *" type="tel" max="10" name="txtCelularCarnet"/>
             </div>
         </div>
     </form>

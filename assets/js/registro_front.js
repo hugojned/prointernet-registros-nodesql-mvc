@@ -26,6 +26,47 @@ listNumCarnets.addEventListener('change', function (event) {
     })
 })
 
+btnRegistrar.addEventListener('click', function(event){
+    event.preventDefault();
+    // Recopilación de datos
+    let formCliente = new FormData(document.getElementById('formCliente'))
+    let formsCarnets = document.querySelectorAll('.formsCarnets')
+    let idEvento = btnRegistrar.dataset[0]
+    let registro = {}
+    
+    for(key of formCliente.keys()){
+        registro[key] = formCliente.get(key)
+    }
+
+    let carnetsArray=[]
+
+    for(form of formsCarnets.values()){
+        let forItem = new FormData(form)
+        let jsonForm = {}
+
+        for(keyForm of forItem.keys()){
+            jsonForm[keyForm] = forItem.get(keyForm)   
+        }
+        carnetsArray.push(jsonForm)
+    }
+    console.log(registro, carnetsArray)
+
+    //Envío de datos
+    fetch('/rtEnviarRegistro', {
+        method: 'POST',
+        headers: {
+            "Content-Type" : "application/json"
+        },
+        body: JSON.stringify({idEvento, registro, carnetsArray})
+    })
+    .then((response) => response.json())
+    .then((response) => {
+        console.log(response)
+    })
+    .catch(function(err){
+        console.log(err)
+    })
+})
 
 //Evento para el registro
 

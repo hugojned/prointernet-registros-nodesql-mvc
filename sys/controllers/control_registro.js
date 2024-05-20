@@ -51,11 +51,19 @@ const registroCtrl = {
         res.render('registroCarnets/evento_registrar', {
             datosEvento,
         })
-    }
+    },
 
     //Controlador de registro de carnets
-
-
+    registroEnviarRegistroCtrl: async(req,res) => {
+        try{
+            const body = req.body
+            const datos = (await dbReg.nuevoRegistroCarnets(body)).data
+            console.log(datos)
+            res.json({ status: 'OK' })
+        }catch(err){
+            res.json({ status: 'ERROR' })
+        }
+    }
 }
 
 module.exports = registroCtrl
