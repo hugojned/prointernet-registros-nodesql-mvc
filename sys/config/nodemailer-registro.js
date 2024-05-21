@@ -17,7 +17,7 @@ async function nMail(correoClienteNM){
         from: '"Hugo Nedzelsky" <angdevirus667@gmail.com>', // sender address
         to: correoClienteNM, // list of receivers
         subject: "Prueba", 
-        html: ''
+        html: 'Si te llegó el mensaje el formulario funciona'
     })
     console.log("Message sent %s", info.messageId);
   }

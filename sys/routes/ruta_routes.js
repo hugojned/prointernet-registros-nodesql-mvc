@@ -9,4 +9,7 @@ router.post('/rtSelectCarnet', registroCtrl.selectCarnetCtrl)
 router.post('/rtEnviarRegistro', registroCtrl.registroEnviarRegistroCtrl)
 
 
+//Envío de correo
+router.post('/rtEnviarCorreo', registroCtrl.enviarCorreo)
+
 module.exports = router

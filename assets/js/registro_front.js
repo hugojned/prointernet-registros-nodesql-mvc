@@ -31,6 +31,7 @@ btnRegistrar.addEventListener('click', function(event){
     // Recopilación de datos
     let formCliente = new FormData(document.getElementById('formCliente'))
     let formsCarnets = document.querySelectorAll('.formsCarnets')
+    let correo = document.getElementById('txtCorreoCliente').value
     let idEvento = btnRegistrar.dataset[0]
     let registro = {}
     
@@ -50,6 +51,7 @@ btnRegistrar.addEventListener('click', function(event){
         carnetsArray.push(jsonForm)
     }
     console.log(registro, carnetsArray)
+    console.log(correo)
 
     //Envío de datos
     fetch('/rtEnviarRegistro', {
@@ -60,15 +62,24 @@ btnRegistrar.addEventListener('click', function(event){
         body: JSON.stringify({idEvento, registro, carnetsArray})
     })
     .then((response) => response.json())
-    .then((response) => {
-        console.log(response)
+    .then((response) => {console.log(response)})
+    
+    //Envío del correo
+    fetch('/rtEnviarCorreo',{
+        method: 'POST',
+        headers: {
+            "Content-Type" : "application/json"
+        },
+        body: JSON.stringify({correo})
     })
-    .then(()=> window.location.pathname = '/resumen-final')
+    .then((response) => response.json())
+    .then((response)=>{console.log(response);})
     .catch(function(err){
         console.log(err)
     })
-})
 
-//Evento para el registro
+    //Redireccionamiento al resumen
+    window.location.pathname = '/resumen-final'
+})
 
 

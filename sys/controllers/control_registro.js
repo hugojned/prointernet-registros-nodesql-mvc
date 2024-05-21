@@ -1,4 +1,5 @@
 const dbReg = require('../db/db_registro')
+const nMail = require('../config/nodemailer-registro')
 
 const registroCtrl = {
     //Controlador de cambio de precio al seleccionar la cantidad de carnets
@@ -22,14 +23,12 @@ const registroCtrl = {
                 if(err){
                     return res.json({status: 'ERROR'})
                 }
-                console.log(htmlCarnets)
 
                 //Backend-tabla-precios
                 res.render('registroCarnets/tabla_precios', {datosEvento}, (err, htmlMontosTotales) => {
                     if(err){
                         return res.json({status: 'ERROR'})
                     }
-                    console.log(htmlMontosTotales)
                     res.json({status: 'OK', datos: {htmlCarnets, htmlMontosTotales}})
                 })
             })
@@ -45,7 +44,6 @@ const registroCtrl = {
     registroVistaCtrl: async(req, res) => {
         const params = req.params
         const datosEvento = (await dbReg.recibirDatosEvento(params)).data[0]
-        console.log(datosEvento)
         if(datosEvento.RESULT == 'NO-EXISTE'){
             res.redirect('/404')
             return
@@ -59,8 +57,7 @@ const registroCtrl = {
     registroEnviarRegistroCtrl: async(req,res) => {
         try{
             const body = req.body
-            const datos = (await dbReg.nuevoRegistroCarnets(body)).data
-            console.log(datos)
+            const datosRegistro = (await dbReg.nuevoRegistroCarnets(body)).data
             res.json({ status: 'OK' })
         }catch(err){
             res.json({ status: 'ERROR' })
@@ -81,6 +78,19 @@ const registroCtrl = {
         }
         catch(err){
             console.log('ERROR')
+        }
+    },
+
+
+    //Correo
+    enviarCorreo: async(req,res) => {
+        try{
+            const body = req.body
+            console.log(body.correo)
+            nMail(body.correo).data
+        }
+        catch(err){
+            throw err
         }
     }
 }
