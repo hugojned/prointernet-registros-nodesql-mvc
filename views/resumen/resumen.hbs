@@ -8,8 +8,105 @@
     <title>Document</title>
 </head>
 <body>
+
+    <!--Carta regresar-->
     <div class="contenedor">
-        <div class="contenedor-reseumen">
+        <div class="contenedor-regresar">
+            <div class="card-regresar">
+                <div class="titulo">
+                    <h3 class="resumen-title-text">¡Plazas registradas exitosamente!</h3>
+                </div>
+                <div class="btnRegresar" id="btnRegresar">
+                    <p>Verifique sus datos debajo y en el correo que registró, en caso de un error notificar al correo de contacto del responsable del evento.</p>
+
+                    <p>¿Desea hacer otro registro?</p>
+                    <div class="btn-container">
+                        <button class="btn" id="btnRegresar">Regresar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Resumen y costos-->
+    <div class="contenedor">
+
+        <!--Resumen cliente-->
+        <div class="contenedor-resumen">
+            <div class="card-resumen">
+                <h4>Resumen del registro</h4>
+                
+                <div class="contenedor-resumen-detalles">
+
+                    <div class="nombre-evento">
+                        <p>Nombre del evento: <span>{{datosEvento.NOMBRE_EVENTO}}</span></p>
+                    </div>
+
+                    <div class="nombre-cliente">
+                        <p>Nombre del cliente solicitante: <span>{{datosCliente.NOMBRE_CLIENTE}} {{datosCliente.APELLIDO_CLIENTE}}</span></p>
+                    </div>
+
+                    <div class="correo-cliente">
+                        <p>Correo del cliente: <span>{{datosCliente.CORREO_CLIENTE}}</span></p>
+                    </div>
+
+                    <div class="fecha-registro-cliente">
+                        <p>Fecha de registro: <span>{{datosCliente.FECHA_REGISTRO}}</span></p>
+                    </div>
+
+                </div>
+        
+            </div>
+        </div>
+
+        <!--Resumen carnets-->
+        <div class="contenedor-resumen">
+            <div class="card-resumen">
+                <h4>Resumen asistentes</h4>
+                
+                <div class="contenedor-resumen-detalles">
+            
+                    <div class="nombres-carnets">
+                        <p>
+                            Asistentes registrados para la reunión:
+                            <br>
+                            <br>
+                            <span>
+                                {{#each datosCarnets}}
+                                    {{NOMBRE_CARNET}} {{APELLIDO_CARNET}}
+                                    <br>
+                                {{/each}}
+                            </span>
+                        </p>
+                    </div>
+
+                </div>
+        
+            </div>
+        </div>
+
+        <!--Costos detalles-->
+        <div class="contenedor-resumen">
+            <div class="card-resumen">
+
+                <h4>Costos del evento</h4>
+                <div class="contenedor-resumen-detalles">
+                    <div class="nombre-evento">
+                        <p>Subtotal: <span>{{datosCliente.SUBTOTAL_CLIENTE}}</span></p>
+                        <p>IVA (16%): <span>{{datosCliente.IVA_TOTAL}}</span></p>
+                        <p>Total a pagar: <span>{{datosCliente.TOTAL_CLIENTE}}</span></p>
+                    </div>
+                </div>
+                
+        
+            </div>
+        </div>
+        
+    </div>
+
+    {{!-- <div class="contenedor">
+        <div class="contenedor-resumen">
             <div class="card-resumen">
                 <h3 class="resumen-title-text">¡Plazas registradas exitosamente!</h3>
                 <h4>Resumen del registro</h4>
@@ -30,7 +127,7 @@
             </div>
         </div>
         
-    </div>
+    </div> --}}
     
 </body>
 </html>

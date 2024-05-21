@@ -1,30 +1,26 @@
 /* Globales */
-body {
+body{
   font-family: Helvetica;
   background: rgb(8, 9, 34);
 }
 
-h4 {
-  font-size: 25px;
+h4{
+  font-size: 35px;
   text-align: center;
   margin: 15px 0 30px 0;
 }
 
 /* Página principal */
 
-.contenedor {
+.contenedor{
   max-width: 1000px;
   margin: 0 auto;
 }
 
-.required-asterisk {
-  color: red;
-}
-
-.contenedor-titulo-evento {
+.contenedor-titulo-evento{
   max-width: 1000px;
   height: 80px;
-  background: linear-gradient(90deg, rgba(112, 0, 49, 1) 0%, rgba(40, 0, 27, 1) 100%);
+  background: linear-gradient(90deg, rgba(112,0,49,1) 0%, rgba(40,0,27,1) 100%);
   backdrop-filter: blur(9px);
   color: #fff;
   border-radius: 12px;
@@ -32,7 +28,7 @@ h4 {
   margin: 50px 0;
 }
 
-.contenedor-cliente-precio {
+.contenedor-cliente-precio{
   display: grid;
   grid-template-columns: 65% 35%;
   align-items: center;
@@ -40,26 +36,15 @@ h4 {
   margin-bottom: 50px;
 }
 
-.contenedorCarnetsDinamicos {
+.contenedor-carnets-dinamicos{
   margin: 25px 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  justify-items: center;
-}
-
-.contenedor-reseumen {
-  display: grid;
-  align-items: center;
-  justify-items: center;
-  margin: 150px;
 }
 
 
 /*Form Cliente */
 .card-cliente {
   width: 470px;
-  background: linear-gradient(90deg, rgba(112, 0, 49, 1) 0%, rgba(40, 0, 27, 1) 100%);
+  background: linear-gradient(90deg, rgba(112,0,49,1) 0%, rgba(40,0,27,1) 100%);
   backdrop-filter: blur(9px);
   color: #fff;
   border-radius: 12px;
@@ -72,7 +57,7 @@ h4 {
   margin: 25px 0;
 }
 
-.inputs-container {
+.inputs-container{
   display: grid;
   justify-content: center;
 }
@@ -96,7 +81,7 @@ h4 {
   color: #fff;
 }
 
-.cbo-container select {
+.cbo-container select{
   width: 400px;
   height: 35px;
   border: none;
@@ -108,14 +93,13 @@ h4 {
   margin: 5px 0;
 }
 
-.btn-container,
-.cbo-container {
+.btn-container, .cbo-container{
   display: grid;
   justify-content: center;
 }
 
-.card-cliente .btn {
-  width: 150px;
+.btn {
+  width: 200px;
   height: 45px;
   background: #fff;
   border: none;
@@ -125,22 +109,21 @@ h4 {
   cursor: pointer;
   font-size: 16px;
   color: #333;
-  font-weight: 600;
+  font-weight: 600; 
 }
 
 /* Carnets */
 
 .card-carnet {
   width: 350px;
-  background: linear-gradient(90deg, rgba(112, 0, 49, 1) 0%, rgba(40, 0, 27, 1) 100%);
+  background: linear-gradient(90deg, rgba(112,0,49,1) 0%, rgba(40,0,27,1) 100%);
   backdrop-filter: blur(9px);
   color: #fff;
   border-radius: 12px;
   padding: 30px 40px;
-  margin-bottom: 50px;
 }
 
-.carnet-text {
+.carnet-text{
   font-size: 24px;
   text-align: center;
   margin: 25px 0;
@@ -166,7 +149,7 @@ h4 {
 
 
 /* Tabla precios */
-.precio-title-text {
+.precio-title-text{
   font-size: 25px;
   text-align: center;
   margin: 15px 0 30px 0;
@@ -174,14 +157,14 @@ h4 {
 
 .card-precios {
   max-width: 300px;
-  background: linear-gradient(90deg, rgba(112, 0, 49, 1) 0%, rgba(40, 0, 27, 1) 100%);
+  background: linear-gradient(90deg, rgba(112,0,49,1) 0%, rgba(40,0,27,1) 100%);
   backdrop-filter: blur(9px);
   color: #fff;
   border-radius: 12px;
   padding: 30px 40px;
 }
 
-.card-precios p {
+.card-precios p{
   font-size: 18px;
   font-weight: bold;
   padding: 10px 0;
@@ -189,24 +172,60 @@ h4 {
 
 
 /* Resumen */
+.contenedor-resumen{
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  margin: 50px;
+}
+
 .card-resumen {
-  max-width: 600px;
-  background: linear-gradient(90deg, rgba(112, 0, 49, 1) 0%, rgba(40, 0, 27, 1) 100%);
+  width: 600px;
+  background: linear-gradient(90deg, rgba(112,0,49,1) 0%, rgba(40,0,27,1) 100%);
   backdrop-filter: blur(9px);
   color: #fff;
   border-radius: 12px;
   padding: 30px 40px;
 }
 
-.card-resumen p {
-  font-size: 18px;
+.card-resumen p{
+  font-size: 20px;
   font-weight: bold;
   padding: 10px 0;
   text-align: center;
 }
 
-.resumen-title-text {
+.resumen-title-text{
   font-size: 35px;
   text-align: center;
   margin: 15px 0 30px 0;
+}
+
+.contenedor-resumen-detalles{
+  max-width: 100%;
+  /* background: linear-gradient(360deg, rgba(255,0,22,1) 0%, rgba(255,175,0,1) 100%); */
+  background: linear-gradient(90deg, rgba(61,0,102,1) 0%, rgba(162,0,0,1) 50%, rgba(164,96,0,1) 100%);
+  border-radius: 12px;
+}
+
+.card-regresar{
+  width: 750px;
+  background: linear-gradient(90deg, rgba(112,0,49,1) 0%, rgba(40,0,27,1) 100%);
+  backdrop-filter: blur(9px);
+  color: #fff;
+  border-radius: 12px;
+  padding: 30px 40px;
+}
+
+.card-regresar p{
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.contenedor-regresar{
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  margin: 50px;
 }
