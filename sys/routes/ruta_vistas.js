@@ -13,6 +13,10 @@ router.get('/404', inicio.r404)
 //Params required
 router.get('/registro', rtRegistro.registroVistaCtrl)
 
+
+//Resumen
+router.get('/resumen-final', rtRegistro.resumenDatos)
+
 // router.get('/contacto', contacto.contacto)
 // router.get('/404', inicio.r404)
 // router.get('/:evento', registro.registro)

@@ -4,6 +4,7 @@ const registroCtrl = {
     //Controlador de cambio de precio al seleccionar la cantidad de carnets
     selectCarnetCtrl: async (req, res) => {
         try{
+
             const body = req.body
             body.numCarnet = Number(body.numCarnetValor)
             const datosEvento = (await dbReg.recibirDatosEvento(body)).data[0]
@@ -32,6 +33,7 @@ const registroCtrl = {
                     res.json({status: 'OK', datos: {htmlCarnets, htmlMontosTotales}})
                 })
             })
+
         }catch(err){
             res.json({status: 'ERROR'})
             console.log('ERROR')
@@ -62,6 +64,23 @@ const registroCtrl = {
             res.json({ status: 'OK' })
         }catch(err){
             res.json({ status: 'ERROR' })
+        }
+    },
+
+
+    //Resumen
+    resumenDatos: async(req,res) =>{
+        try{
+            const body = req.body
+            const datosResumen = (await dbReg.obtenerResumen(body)).data
+
+            const datosEvento = datosResumen[0][0]
+            const datosCliente = datosResumen[1][0]
+            const datosCarnets = datosResumen[2]
+            res.render('resumen/resumen', {datosEvento, datosCliente, datosCarnets})
+        }
+        catch(err){
+            console.log('ERROR')
         }
     }
 }

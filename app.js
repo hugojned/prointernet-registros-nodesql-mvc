@@ -12,6 +12,8 @@ app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname, 'views'))
 hbs.registerPartials(path.join(__dirname, `./views`));
 hbs.registerPartials(path.join(__dirname, `./views/partials`));
+hbs.registerPartials(path.join(__dirname, `./views/registroCarnets`));
+hbs.registerPartials(path.join(__dirname, `./views/resumen`));
 
 // Middlewares
 app.use(express.urlencoded({extended: true}))

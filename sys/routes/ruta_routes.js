@@ -9,7 +9,4 @@ router.post('/rtSelectCarnet', registroCtrl.selectCarnetCtrl)
 router.post('/rtEnviarRegistro', registroCtrl.registroEnviarRegistroCtrl)
 
 
-//Vista del resumen GET
-//router.get()
-
 module.exports = router

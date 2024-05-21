@@ -13,15 +13,17 @@
             <div class="card-resumen">
                 <h3 class="resumen-title-text">¡Plazas registradas exitosamente!</h3>
                 <h4>Resumen del registro</h4>
-                <p>Nombre del evento: <span>E</span></p>
+                <p>Nombre del evento: <span>{{datosEvento.NOMBRE_EVENTO}}</span></p>
                 <div class="nombre-evento"></div>
         
         
                 <p>Nombre del cliente solicitante:</p>
-                <div class="nombre-cliente"></div>
+                <div class="nombre-cliente">{{datosCliente.NOMBRE_CLIENTE}}</div>
         
                 <p>Asistentes registrados para la reunión:</p>
-                <div class="nombres-carnets"></div>
+                <div class="nombres-carnets">{{#each datosCarnets}}
+                    {{NOMBRE_CARNET}} {{APELLIDO_CARNET}}
+                    {{/each}}</div>
 
                 <a href="#">Regresar</a>
         

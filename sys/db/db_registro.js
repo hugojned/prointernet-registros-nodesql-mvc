@@ -37,14 +37,17 @@ const registrarDB = {
     },
 
     //Despliega el resumen final del pago 
-    // obtenerResumen: async() => {
-    //     try{
 
-    //     }
-    //     catch(error){
-            
-    //     }
-    // }
+    obtenerResumen: async() => {
+        try{
+            let resultado = await sqlConn.request()
+                .execute('RESUMEN_CLIENTE_CARNETS')
+            return sqlFormatoRespuesta(resultado)
+        }
+        catch(error){
+            throw error
+        }
+    }
 }
 
 module.exports = registrarDB
