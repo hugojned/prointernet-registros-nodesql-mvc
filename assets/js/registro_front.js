@@ -63,6 +63,7 @@ btnRegistrar.addEventListener('click', function(event){
     .then((response) => {
         console.log(response)
     })
+    .then(()=> window.location.pathname = '/resumen-final')
     .catch(function(err){
         console.log(err)
     })
