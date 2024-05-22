@@ -36,14 +36,6 @@ h4{
   margin-bottom: 50px;
 }
 
-.contenedor-carnets-dinamicos{
-  display: grid;
-  grid-template-columns: 2;
-  align-items: center;
-  justify-items: center;
-  margin: 25px 0;
-}
-
 
 /*Form Cliente */
 .card-cliente {
@@ -117,6 +109,12 @@ h4{
 }
 
 /* Carnets */
+.contenedorCarnetsDinamicos{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
 
 .card-carnet {
   width: 350px;
@@ -125,6 +123,7 @@ h4{
   color: #fff;
   border-radius: 12px;
   padding: 30px 40px;
+  margin: 25px;
 }
 
 .carnet-text{
