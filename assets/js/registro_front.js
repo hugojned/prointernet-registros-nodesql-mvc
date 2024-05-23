@@ -50,8 +50,6 @@ btnRegistrar.addEventListener('click', function(event){
         }
         carnetsArray.push(jsonForm)
     }
-    console.log(registro, carnetsArray)
-    console.log(correo)
 
     //Envío de datos
     fetch('/rtEnviarRegistro', {
