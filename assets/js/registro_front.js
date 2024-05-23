@@ -60,9 +60,9 @@ btnRegistrar.addEventListener('click', function(event){
         body: JSON.stringify({idEvento, registro, carnetsArray})
     })
     .then((response) => response.json())
-    .then((response) => {console.log(response)})
-    
+    //.then((response) => {console.log(response)})
     //Envío del correo
+    
     fetch('/rtEnviarCorreo',{
         method: 'POST',
         headers: {

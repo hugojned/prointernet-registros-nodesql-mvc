@@ -58,6 +58,7 @@ const registroCtrl = {
         try{
             const body = req.body
             const datosRegistro = (await dbReg.nuevoRegistroCarnets(body)).data
+            
             res.json({ status: 'OK' })
         }catch(err){
             res.json({ status: 'ERROR' })
